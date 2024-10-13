@@ -1,0 +1,55 @@
+{% comment %} {% load static %} {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+                <strong>{{message}}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <center>
+        <h1><i>__TODO LIST__</i></h1>
+        <hr/>
+    </center>
+    <div>
+        <div>
+            {% for t in todo %}
+                <div class="card">
+                    <center><b>{{t.title}}</b></center>
+                    <hr/>
+                    {{t.date}}
+                    <hr/>
+                    {{t.details}}
+                    <br/><br/>
+                    <form action="{% url "delete" pk=t.id %}" method="post">
+                        {% csrf_token %}
+                        <button value="delete" type="submit">delete</button>
+                    </form>
+                </div>
+                {% endfor %}
+        </div>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                {{form}}
+                <center>
+                    <input type="submit" value="submit">
+                </center>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+    
