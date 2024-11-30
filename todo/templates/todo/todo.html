@@ -25,8 +25,8 @@
     <div>
         <div>
             {% for t in todo %}
-                <div class="card">
-                    <center><b>{{t.title}}</b></center>
+                <div>
+                    <b>{{t.title}}</b>
                     <hr/>
                     {{t.date}}
                     <hr/>
@@ -37,7 +37,7 @@
                         <button value="delete" type="submit">delete</button>
                     </form>
                 </div>
-                {% endfor %}
+            {% endfor %}
         </div>
         <div>
             <form method="post">

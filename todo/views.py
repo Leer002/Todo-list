@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib import messages
 
@@ -41,3 +41,13 @@ class TodoRemoveView(View):
         return render(request, "todo/todo.html", context={"todo":todo_item, "form":TodoForm()})
         
         
+
+
+
+
+
+
+
+
+
+
