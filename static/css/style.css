@@ -1,0 +1,49 @@
+
+
+.msg {
+    border: 3px solid red;
+    border-radius: 10px;
+    outline: 2px solid lightpink;
+    padding: 10px;
+    width: fit-content;
+}
+
+.title {
+    border: 5px solid darkblue;
+    border-radius: 10px;
+    outline: 3px solid lightblue;
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.title:hover {
+    background-color: lightblue;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin: 30px;
+    width: 468px;
+}
+
+.form {
+    justify-self: center;
+}
+
+.delete {
+    margin-bottom: 40px;
+}
+
+.detail {
+    border: 4px solid darkred;
+    padding: 30px;
+    width: 400px;
+}
+
+.detail:hover {
+    background-color: lightpink;
+}
